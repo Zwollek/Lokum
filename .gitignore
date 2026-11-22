@@ -1,0 +1,16 @@
+# --- System ---
+.DS_Store
+Thumbs.db
+
+# --- IDE ---
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+
+# --- Docker ---
+docker/**/data/
+
+# --- Logs ---
+*.log
