@@ -1,0 +1,43 @@
+# Layer dependency rules for all modules (src/<Module>/<Layer>).
+# HTTP controllers are adapters and live in Infrastructure/Http.
+# Run: composer deptrac
+deptrac:
+  paths:
+    - ./src
+  exclude_files:
+    - '#.*Kernel\.php$#'
+  layers:
+    # Shared building blocks of the domain (base classes, value objects)
+    - name: SharedDomain
+      collectors:
+        - type: directory
+          value: src/Shared/Domain/.*
+    - name: Domain
+      collectors:
+        - type: bool
+          must:
+            - type: directory
+              value: src/[^/]+/Domain/.*
+          must_not:
+            - type: directory
+              value: src/Shared/.*
+    - name: Application
+      collectors:
+        - type: directory
+          value: src/[^/]+/Application/.*
+    - name: Infrastructure
+      collectors:
+        - type: directory
+          value: src/[^/]+/Infrastructure/.*
+  ruleset:
+    # Domain depends on nothing but shared domain code
+    SharedDomain: ~
+    Domain:
+      - SharedDomain
+    Application:
+      - Domain
+      - SharedDomain
+    Infrastructure:
+      - Application
+      - Domain
+      - SharedDomain
