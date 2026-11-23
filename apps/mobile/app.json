@@ -9,10 +9,7 @@
     "android": {
       "predictiveBackGestureEnabled": false
     },
-    "plugins": [
-      "expo-router",
-      "expo-splash-screen"
-    ],
+    "plugins": ["expo-router", "expo-splash-screen"],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
