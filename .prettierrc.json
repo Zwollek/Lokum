@@ -13,6 +13,10 @@
     {
       "files": "apps/mobile/**",
       "options": { "tailwindStylesheet": "./apps/mobile/src/global.css" }
+    },
+    {
+      "files": ["*.yaml", "*.yml"],
+      "options": { "singleQuote": false }
     }
   ]
 }
