@@ -1,0 +1,3 @@
+/* HeroUI v3 styles must be imported after Tailwind CSS */
+@import "tailwindcss";
+@import "@heroui/styles";
