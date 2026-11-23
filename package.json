@@ -1,0 +1,12 @@
+{
+  "name": "lokum",
+  "private": true,
+  "packageManager": "pnpm@11.29.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev:web": "pnpm --filter @lokum/web dev",
+    "dev:mobile": "pnpm --filter @lokum/mobile start"
+  }
+}

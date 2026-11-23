@@ -17,3 +17,6 @@ docker/**/data/
 
 # --- Docker Compose (local values, template in .env.example) ---
 /.env
+
+# --- Node / pnpm ---
+node_modules/
