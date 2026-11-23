@@ -5,7 +5,7 @@ PHP     = $(COMPOSE) exec php
 ARGS = $(filter-out $@,$(MAKECMDGOALS))
 
 .DEFAULT_GOAL := help
-.PHONY: help build up down ps logs sh composer console
+.PHONY: help build up down ps logs sh composer console cs cs-fix stan deptrac qa test
 
 help: ## List commands
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2}'
@@ -33,6 +33,23 @@ composer: ## Composer in the container (e.g. make composer require vendor/packag
 
 console: ## bin/console in the container (e.g. make console cache:clear)
 	$(PHP) bin/console $(ARGS)
+
+cs: ## Check PHP code style (php-cs-fixer)
+	$(PHP) composer cs
+
+cs-fix: ## Fix PHP code style (php-cs-fixer)
+	$(PHP) composer cs:fix
+
+stan: ## Static analysis (PHPStan, level max)
+	$(PHP) composer stan
+
+deptrac: ## Check layer dependencies (Deptrac)
+	$(PHP) composer deptrac
+
+qa: cs stan deptrac ## Run all PHP quality checks
+
+test: ## Run PHP tests (PHPUnit)
+	$(PHP) bin/phpunit $(ARGS)
 
 # Swallow extra arguments so make does not fail with "No rule to make target"
 %:

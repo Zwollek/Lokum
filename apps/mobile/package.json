@@ -27,14 +27,23 @@
     "uniwind": "^1.14.0"
   },
   "devDependencies": {
+    "@jest/globals": "~30.5.2",
+    "@testing-library/react-native": "^14.1.0",
     "@types/react": "~19.3.0",
+    "jest": "~30.5.2",
+    "jest-expo": "~58.0.15",
+    "oxlint": "^1.94.0",
+    "oxlint-config-universe": "^0.2.0",
+    "oxlint-tsgolint": "^7.0.2001",
     "typescript": "~6.0.3"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "lint": "expo lint"
+    "lint": "oxlint --deny-warnings",
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
   },
   "private": true
 }

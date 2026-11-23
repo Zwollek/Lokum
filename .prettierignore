@@ -1,0 +1,14 @@
+# PHP and Symfony config are formatted by php-cs-fixer / Symfony conventions
+apps/api/
+
+# Generated files
+pnpm-lock.yaml
+**/dist/
+**/.expo/
+**/coverage/
+apps/mobile/src/uniwind-types.d.ts
+apps/mobile/expo-env.d.ts
+
+# Local, not versioned
+docs/
+CLAUDE.md

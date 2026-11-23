@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": true,
+  "singleQuote": true,
+  "printWidth": 100,
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["tv", "cn"],
+  "overrides": [
+    {
+      "files": "apps/web/**",
+      "options": { "tailwindStylesheet": "./apps/web/src/styles/global.css" }
+    },
+    {
+      "files": "apps/mobile/**",
+      "options": { "tailwindStylesheet": "./apps/mobile/src/global.css" }
+    }
+  ]
+}

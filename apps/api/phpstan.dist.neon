@@ -1,0 +1,12 @@
+# Extensions (symfony, phpunit, strict-rules) are loaded by phpstan/extension-installer.
+# Only our code is analysed; bin/, config/, public/ and tests/bootstrap.php are Symfony recipe boilerplate.
+parameters:
+    level: max
+    paths:
+        - src/
+        - tests/
+    excludePaths:
+        - tests/bootstrap.php
+    tmpDir: var/cache/phpstan
+    symfony:
+        containerXmlPath: var/cache/dev/App_KernelDevDebugContainer.xml
