@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "Lokum",
+    "slug": "lokum",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "lokum",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-router",
+      "expo-splash-screen"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
